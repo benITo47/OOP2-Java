@@ -1,12 +1,12 @@
 public class Person {
-    private StringBuffer name; // Imie i Nazwisko
+    private StringBuffer name; //Imie i Nazwisko
     private StringBuffer street;
     private int number;
 
     Person(StringBuffer name, StringBuffer street, int number) {
-        this.name = name;
-        this.street = street;
-        this.number = number;
+        setName(name);
+        setStreet(street);
+        setNumber(number);
     }
 
     Person(Person other) {
@@ -21,7 +21,10 @@ public class Person {
             this.name = other.name;
             this.street = other.street;
         }
+
         this.number = other.getNumber();
+
+
     }
 
     void printDetails() {
@@ -31,7 +34,8 @@ public class Person {
         System.out.println("-----------------------------");
     }
 
-    // Getters
+
+    //Getters
     StringBuffer getName() {
         return name;
     }
@@ -44,15 +48,19 @@ public class Person {
         return number;
     }
 
+    //Setters
     void setName(StringBuffer name) {
-        this.name.replace(0, this.name.length(), name.toString());
+        this.name = name;
     }
 
     void setStreet(StringBuffer street) {
-        this.street.replace(0, this.street.length(), street.toString());
+        this.street = street;
     }
 
     void setNumber(int number) {
         this.number = number;
     }
+
+
 }
+
